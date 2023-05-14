@@ -12,6 +12,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  bool _isElevated = true;
+
   @override
   Widget build(BuildContext context) {
     final screenwidth = MediaQuery.of(context).size.width;
@@ -39,6 +41,7 @@ class _HomepageState extends State<Homepage> {
       drawer: Padding(
         padding: const EdgeInsets.all(16),
         child: Drawer(
+            shadowColor: Colors.grey.shade300,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.elliptical(18, 18))),
             backgroundColor: Colors.grey.shade300,
@@ -106,21 +109,50 @@ class _HomepageState extends State<Homepage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(18),
-            child: Text(
-              "Colours.play",
-              style: TextStyle(
-                fontFamily: 'Product',
-                fontWeight: FontWeight.w700,
-                fontSize: fontSize,
-                color: Colors.black87,
+          //Animated neumorphic design
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _isElevated = !_isElevated;
+              });
+            },
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.grey.shade300,
+                  boxShadow: _isElevated
+                      ? [
+                          BoxShadow(
+                              offset: const Offset(7, 7),
+                              color: Colors.grey.shade500,
+                              blurRadius: 15,
+                              spreadRadius: 1),
+                          const BoxShadow(
+                              offset: Offset(-7, -7),
+                              color: Colors.white,
+                              blurRadius: 15,
+                              spreadRadius: 1),
+                        ]
+                      : null),
+              child: Padding(
+                padding: const EdgeInsets.all(22),
+                child: Text(
+                  "Colours.play",
+                  style: TextStyle(
+                    fontFamily: 'Product',
+                    fontWeight: FontWeight.w700,
+                    fontSize: fontSize,
+                    color: Colors.black87,
+                  ),
+                ),
               ),
             ),
           ),
           const SizedBox(
             height: 35,
           ),
+          //First Button
           Center(
             child: Container(
               decoration: BoxDecoration(
@@ -128,12 +160,12 @@ class _HomepageState extends State<Homepage> {
                   color: Colors.grey.shade300,
                   boxShadow: [
                     BoxShadow(
-                        offset: const Offset(5, 5),
+                        offset: const Offset(6, 6),
                         color: Colors.grey.shade500,
                         blurRadius: 15,
                         spreadRadius: 1),
                     const BoxShadow(
-                        offset: Offset(-5, -5),
+                        offset: Offset(-6, -6),
                         color: Colors.white,
                         blurRadius: 15,
                         spreadRadius: 1),
@@ -163,6 +195,7 @@ class _HomepageState extends State<Homepage> {
           const SizedBox(
             height: 40,
           ),
+          //Second Button
           Center(
             child: Container(
               decoration: BoxDecoration(
@@ -170,12 +203,12 @@ class _HomepageState extends State<Homepage> {
                   color: Colors.grey.shade300,
                   boxShadow: [
                     BoxShadow(
-                        offset: const Offset(5, 5),
+                        offset: const Offset(6, 6),
                         color: Colors.grey.shade500,
                         blurRadius: 15,
                         spreadRadius: 1),
                     const BoxShadow(
-                        offset: Offset(-5, -5),
+                        offset: Offset(-6, -6),
                         color: Colors.white,
                         blurRadius: 15,
                         spreadRadius: 1),

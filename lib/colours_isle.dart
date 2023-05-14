@@ -36,7 +36,7 @@ class _ClrPageState extends State<ClrPage> {
         titleTextStyle: const TextStyle(
           fontFamily: 'Product',
           fontWeight: FontWeight.w500,
-          fontSize: 36,
+          fontSize: 33,
           color: Colors.black87,
         ),
       ),
@@ -58,11 +58,21 @@ class _ClrPageState extends State<ClrPage> {
           Navigator.pop(context, "Returned from Colours Isle");
 
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            width: MediaQuery.of(context).size.width * 0.95,
+            backgroundColor: Colors.grey.shade400,
+            width: MediaQuery.of(context).size.width * 0.6,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.elliptical(18, 18))),
-            content: const Text("Returned to Homepage"),
-            duration: const Duration(milliseconds: 500),
+            content: const Center(
+              child: Text(
+                "Returned to Homepage",
+                style: TextStyle(
+                  fontFamily: 'Product',
+                  color: Colors.black87,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+            ),
+            duration: const Duration(milliseconds: 700),
             behavior: SnackBarBehavior.floating,
           ));
         },
