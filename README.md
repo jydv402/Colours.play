@@ -2,7 +2,7 @@
 
 A new Flutter project. Play with infinte Gradients and Colour Lists generated at random...!
 
-The app showcases the versatility and endless possibilities of Flutter.
+
 
 ## Features
 - 'The Gradient Isle' shows you random gradient backgrounds.
