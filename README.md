@@ -1,16 +1,11 @@
-# colours_app
+# Colours.play
 
-A new Flutter project.
+A new Flutter project. Play with infinte Gradients and Colour Lists generated at random...!
 
-## Getting Started
+The app showcases the versatility and endless possibilities of Flutter.
 
-This project is a starting point for a Flutter application.
+## Features
+- 'The Gradient Isle' shows you random gradient backgrounds.
+- 'The Colours Isle' display an infinite list of scrollable colours.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
